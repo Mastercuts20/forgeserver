@@ -1,0 +1,232 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 18/06/18 4:58 PM
+Description: Exception in server tick loop
+
+java.lang.NoClassDefFoundError: micdoodle8/mods/galacticraft/core/entities/player/GCEntityPlayerMP
+	at net.minecraft.server.management.PreYggdrasilConverter.func_152724_a(SourceFile:69)
+	at net.minecraft.server.dedicated.DedicatedServer.func_152368_aE(DedicatedServer.java:504)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:199)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:387)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:685)
+Caused by: java.lang.ClassNotFoundException: micdoodle8.mods.galacticraft.core.entities.player.GCEntityPlayerMP
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 5 more
+Caused by: java.lang.NullPointerException
+	at org.objectweb.asm.ClassReader.<init>(Unknown Source)
+	at micdoodle8.mods.miccore.MicdoodleTransformer.startInjection(MicdoodleTransformer.java:1995)
+	at micdoodle8.mods.miccore.MicdoodleTransformer.transformCustomAnnotations(MicdoodleTransformer.java:1025)
+	at micdoodle8.mods.miccore.MicdoodleTransformer.transform(MicdoodleTransformer.java:345)
+	at net.minecraft.launchwrapper.LaunchClassLoader.runTransformers(LaunchClassLoader.java:279)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:176)
+	... 7 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_162, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 937238064 bytes (893 MB) / 1997537280 bytes (1905 MB) up to 1997537280 bytes (1905 MB)
+	JVM Flags: 2 total; -Xmx2G -Xms1G
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 86 mods loaded, 76 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCH	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCH	FML{7.10.99.99} [Forge Mod Loader] (forge_server.jar) 
+	UCH	Forge{10.13.4.1614} [Minecraft Forge] (forge_server.jar) 
+	UCH	CodeChickenCore{1.0.7.47} [CodeChicken Core] (minecraft.jar) 
+	UCH	Micdoodlecore{} [Micdoodle8 Core] (minecraft.jar) 
+	UCH	NotEnoughItems{1.0.5.120} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.120-universal.jar) 
+	UCH	OpenModsCore{0.10} [OpenModsCore] (minecraft.jar) 
+	UCH	<CoFH ASM>{000} [CoFH ASM] (minecraft.jar) 
+	UCH	FastCraft{1.23} [FastCraft] (fastcraft-1.23.jar) 
+	UCH	bspkrsCore{6.15} [bspkrsCore] ([1.7.10]bspkrsCore-universal-6.15.jar) 
+	UCH	Treecapitator{1.7.10} [Treecapitator] ([1.7.10]Treecapitator-universal-2.0.4.jar) 
+	UCH	IC2{2.2.827-experimental} [IndustrialCraft 2] (industrialcraft-2-2.2.827-experimental.jar) 
+	UCH	AdvancedSolarPanel{1.7.10-3.5.1} [Advanced Solar Panels] (AdvancedSolarPanel-1.7.10-3.5.1.jar) 
+	UCH	bdlib{1.9.4.109} [BD Lib] (bdlib-1.9.4.109-mc1.7.10.jar) 
+	UCH	BiblioCraft{1.11.7} [BiblioCraft] (BiblioCraft[v1.11.7][MC1.7.10].jar) 
+	UCH	CoFHCore{1.7.10R3.1.4} [CoFH Core] (CoFHCore-[1.7.10]3.1.4-329.jar) 
+	UCH	BuildCraft|Core{7.1.22} [BuildCraft] (buildcraft-7.1.22.jar) 
+	UCH	BuildCraft|Transport{7.1.22} [BC Transport] (buildcraft-7.1.22.jar) 
+	UCH	BuildCraft|Factory{7.1.22} [BC Factory] (buildcraft-7.1.22.jar) 
+	UCH	BuildCraft|Silicon{7.1.22} [BC Silicon] (buildcraft-7.1.22.jar) 
+	UCH	BuildCraft|Robotics{7.1.22} [BC Robotics] (buildcraft-7.1.22.jar) 
+	UCH	BuildCraft|Energy{7.1.22} [BC Energy] (buildcraft-7.1.22.jar) 
+	UCH	BuildCraft|Builders{7.1.22} [BC Builders] (buildcraft-7.1.22.jar) 
+	UCH	CarpentersBlocks{3.3.8.1} [Carpenter's Blocks] (Carpenter's Blocks v3.3.8.1 - MC 1.7.10.jar) 
+	UCH	ComputerCraft{1.75} [ComputerCraft] (ComputerCraft1.75.jar) 
+	UCH	PTRModelLib{1.0.0} [PTRModelLib] (Decocraft-2.4.2_1.7.10.jar) 
+	UCH	props{2.4.2} [Decocraft] (Decocraft-2.4.2_1.7.10.jar) 
+	UCH	DragonsRadioMod{1.7.1} [Dragon's Radio Mod] (Dragon's Radio Mod-MC1.7.10-1.7.1.jar) 
+	UCH	dualhotbar{1.6} [Dual Hotbar] (dualhotbar-1.7.10-1.6.jar) 
+	UCH	Eln{@VERSION@} [Electrical Age] (ElectricalAge-1.14.2-Build-487-c2eeaa3.jar) 
+	UCH	endercore{1.7.10-0.2.0.39_beta} [EnderCore] (EnderCore-1.7.10-0.2.0.39_beta.jar) 
+	UCH	MineFactoryReloaded{1.7.10R2.8.1} [MineFactory Reloaded] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	Waila{1.5.10} [Waila] (Waila-1.5.10_1.7.10.jar) 
+	UCH	EnderIO{1.7.10-2.3.0.429_beta} [Ender IO] (EnderIO-1.7.10-2.3.0.429_beta.jar) 
+	UCH	extrabuttons{1.7.10.1} [ExtraButtons] (ExtraButtons-1.7.10.1.jar) 
+	UCH	flenixcities{0.16.1} [FlenixCities] (FlenixCitiesCore_[1.7.10]-0.16.1-b122.jar) 
+	UCH	malisiscore{1.7.10-0.14.3} [MalisisCore] (malisiscore-1.7.10-0.14.3.jar) 
+	UCH	malisisadvert{1.7.10-0.5.0} [Malisis Advert] (malisisadvert-1.7.10-0.5.0.jar) 
+	UCH	malisisdoors{1.7.10-1.13.2} [Malisis' Doors] (malisisdoors-1.7.10-1.13.2.jar) 
+	UCH	MineFactoryReloaded|CompatBuildCraft{1.7.10R2.8.1} [MFR Compat: BuildCraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	MineFactoryReloaded|CompatForgeMicroblock{1.7.10R2.8.1} [MFR Compat: ForgeMicroblock] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	MineFactoryReloaded|CompatIC2{1.7.10R2.8.1} [MFR Compat: IC2] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	ForgeMultipart{1.2.0.345} [Forge Multipart] (ForgeMultipart-1.7.10-1.2.0.345-universal.jar) 
+	UCH	MrTJPCoreMod{1.1.0.33} [MrTJPCore] (MrTJPCore-1.7.10-1.1.0.33-universal.jar) 
+	UCH	ProjRed|Core{4.7.0pre12.95} [ProjectRed Core] (ProjectRed-1.7.10-4.7.0pre12.95-Base.jar) 
+	UCH	ProjRed|Exploration{4.7.0pre12.95} [ProjectRed Exploration] (ProjectRed-1.7.10-4.7.0pre12.95-World.jar) 
+	UCH	MineFactoryReloaded|CompatProjRed{1.7.10R2.8.1} [MFR Compat ProjectRed] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	Railcraft{9.12.2.1} [Railcraft] (Railcraft_1.7.10-9.12.2.1.jar) 
+	UCH	MineFactoryReloaded|CompatRailcraft{1.7.10R2.8.1} [MFR Compat: Railcraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	ThermalFoundation{1.7.10R1.2.6} [Thermal Foundation] (ThermalFoundation-[1.7.10]1.2.6-118.jar) 
+	UCH	ThermalExpansion{1.7.10R4.1.5} [Thermal Expansion] (ThermalExpansion-[1.7.10]4.1.5-248.jar) 
+	UCH	MineFactoryReloaded|CompatThermalExpansion{1.7.10R2.8.1} [MFR Compat: Thermal Expansion] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	MineFactoryReloaded|CompatVanilla{1.7.10R2.8.1} [MFR Compat: Vanilla] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCH	OpenMods{0.10} [OpenMods] (OpenModsLib-1.7.10-0.10.jar) 
+	UCH	OpenBlocks{1.6} [OpenBlocks] (OpenBlocks-1.7.10-1.6.jar) 
+	UCH	PneumaticCraft{1.12.7-150} [PneumaticCraft] (PneumaticCraft-1.7.10-1.12.7-150-universal.jar) 
+	UCH	PowerConverters3{1.7.10-2.11} [Power Converters 3] (PowerConverters-1.7.10-2.11.jar) 
+	UCH	pressure{1.3.0.130} [Pressure Pipes] (pressure-1.3.0.130-mc1.7.10.jar) 
+	UCH	ProjRed|Transmission{4.7.0pre12.95} [ProjectRed Transmission] (ProjectRed-1.7.10-4.7.0pre12.95-Integration.jar) 
+	UCH	ProjRed|Transportation{4.7.0pre12.95} [ProjectRed Transportation] (ProjectRed-1.7.10-4.7.0pre12.95-Mechanical.jar) 
+	UCH	ProjRed|Compatibility{4.7.0pre12.95} [ProjectRed Compatibility] (ProjectRed-1.7.10-4.7.0pre12.95-Compat.jar) 
+	UCH	ProjRed|Integration{4.7.0pre12.95} [ProjectRed Integration] (ProjectRed-1.7.10-4.7.0pre12.95-Integration.jar) 
+	UCH	ProjRed|Fabrication{4.7.0pre12.95} [ProjectRed Fabrication] (ProjectRed-1.7.10-4.7.0pre12.95-Fabrication.jar) 
+	UCH	ProjRed|Illumination{4.7.0pre12.95} [ProjectRed Illumination] (ProjectRed-1.7.10-4.7.0pre12.95-Lighting.jar) 
+	UCH	ProjRed|Expansion{4.7.0pre12.95} [ProjectRed Expansion] (ProjectRed-1.7.10-4.7.0pre12.95-Mechanical.jar) 
+	UCH	r2s{1.1.4} [r2s_Radio] (r2s-Radio-1.7.10-1.1.4.RELEASE.jar) 
+	UCH	StorageDrawers{1.7.10-1.10.9} [Storage Drawers] (StorageDrawers-1.7.10-1.10.9.jar) 
+	UCH	tc{4.3.3_011} [Traincraft] (Traincraft-4.3.3_011.jar) 
+	UCH	WR-CBE|Core{1.4.1.9} [WR-CBE Core] (WR-CBE-1.7.10-1.4.1.9-universal.jar) 
+	UCH	WR-CBE|Addons{1.4.1.9} [WR-CBE Addons] (WR-CBE-1.7.10-1.4.1.9-universal.jar) 
+	UCH	WR-CBE|Logic{1.4.1.9} [WR-CBE Logic] (WR-CBE-1.7.10-1.4.1.9-universal.jar) 
+	UCH	McMultipart{1.2.0.345} [Minecraft Multipart Plugin] (ForgeMultipart-1.7.10-1.2.0.345-universal.jar) 
+	UCH	ForgeRelocation{0.0.1.4} [ForgeRelocation] (ForgeRelocation-1.7.10-0.0.1.4-universal.jar) 
+	UCH	MCFrames{1.0} [MCFrames] (ForgeRelocation-1.7.10-0.0.1.4-universal.jar) 
+	UCH	RelocationFMP{0.0.1.2} [RelocationFMP] (ForgeRelocationFMP-1.7.10-0.0.1.2-universal.jar) 
+	UCH	ForgeMicroblock{1.2.0.345} [Forge Microblocks] (ForgeMultipart-1.7.10-1.2.0.345-universal.jar) 
+	UD	MineFactoryReloaded|CompatAppliedEnergistics{1.7.10R2.8.1} [MFR Compat: Applied Energistics] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatAtum{1.7.10R2.8.1} [MFR Compat: Atum] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatBackTools{1.7.10R2.8.1} [MFR Compat: BackTools] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatChococraft{1.7.10R2.8.1} [MFR Compat: Chococraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatExtraBiomes{1.7.10R2.8.1} [MFR Compat: ExtraBiomes] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatForestry{1.7.10R2.8.1} [MFR Compat: Forestry] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatSufficientBiomes{1.7.10R2.8.1} [MFR Compat: Sufficient Biomes] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatThaumcraft{1.7.10R2.8.1} [MFR Compat: Thaumcraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatTConstruct{1.7.10R2.8.1} [MFR Compat: Tinkers' Construct] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatTwilightForest{1.7.10R2.8.1} [MFR Compat: TwilightForest] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	OpenModsLib class transformers: [stencil_patches:ENABLED],[movement_callback:ENABLED],[player_damage_hook:FINISHED],[map_gen_fix:ENABLED],[gl_capabilities_hook:ENABLED],[player_render_hook:ENABLED]
+	Class transformer null safety: all safe
+	CoFHCore: -[1.7.10]3.1.4-329
+	MineFactoryReloaded: -[1.7.10]2.8.1-174
+	ThermalFoundation: -[1.7.10]1.2.6-118
+	ThermalExpansion: -[1.7.10]4.1.5-248
+	List of loaded APIs: 
+		* Baubles|API (1.0.1.10) from ThermalFoundation-[1.7.10]1.2.6-118.jar
+		* BuildCraftAPI|blocks (1.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|blueprints (1.5) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|boards (2.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|core (1.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|crops (1.1) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|events (2.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|facades (1.1) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|filler (4.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|fuels (2.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|gates (4.1) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|items (1.1) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|library (2.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|lists (1.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|power (1.3) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|recipes (3.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|robotics (3.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|statements (1.1) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|tablet (1.0) from buildcraft-7.1.22.jar
+		* BuildCraftAPI|tiles (1.2) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|tools (1.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* BuildCraftAPI|transport (4.1) from buildcraft-7.1.22.jar
+		* CarpentersBlocks|API (3.3.7) from Carpenter's Blocks v3.3.8.1 - MC 1.7.10.jar
+		* CoFHAPI (1.7.10R1.3.1) from Traincraft-4.3.3_011.jar
+		* CoFHAPI|block (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.429_beta.jar
+		* CoFHAPI|core (1.7.10R1.3.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHAPI|energy (1.7.10R1.0.2) from ElectricalAge-1.14.2-Build-487-c2eeaa3.jar
+		* CoFHAPI|fluid (1.7.10R1.0.13B2) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHAPI|inventory (1.7.10R1.0.13B2) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHAPI|item (1.7.10R1.0.13B2) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHAPI|modhelpers (1.7.10R1.3.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHAPI|tileentity (1.7.10R1.3.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHAPI|transport (1.7.10R1.0.13B2) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHAPI|world (1.7.10R1.0.13B2) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib (1.7.10R1.0.3B3) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib|audio (1.7.10R1.0.3B3) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib|gui (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|gui|container (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|gui|element (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|gui|element|listbox (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|gui|slot (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|inventory (1.7.10R1.0.3B3) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib|render (1.7.10R1.0.3B3) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib|render|particle (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|util (1.7.10R1.0.3B3) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib|util|helpers (1.7.10R1.0.3B3) from CoFHLib-[1.7.10]1.2.1-185.jar
+		* CoFHLib|util|position (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|world (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* CoFHLib|world|feature (1.7.10R1.2.1) from CoFHCore-[1.7.10]3.1.4-329.jar
+		* ComputerCraft|API (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|FileSystem (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|Lua (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|Media (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|Peripheral (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|Permissions (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|Redstone (1.75) from ComputerCraft1.75.jar
+		* ComputerCraft|API|Turtle (1.75) from ComputerCraft1.75.jar
+		* CSLib|API (0.3.0) from Decocraft-2.4.2_1.7.10.jar
+		* EnderIOAPI (0.0.2) from EnderIO-1.7.10-2.3.0.429_beta.jar
+		* EnderIOAPI|Redstone (0.0.2) from EnderIO-1.7.10-2.3.0.429_beta.jar
+		* EnderIOAPI|Teleport (0.0.2) from EnderIO-1.7.10-2.3.0.429_beta.jar
+		* EnderIOAPI|Tools (0.0.2) from EnderIO-1.7.10-2.3.0.429_beta.jar
+		* ForgeRelocation|API (0.0.1.4) from ForgeRelocation-1.7.10-0.0.1.4-universal.jar
+		* IC2API (1.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* OpenBlocks|API (1.1) from OpenBlocks-1.7.10-1.6.jar
+		* PneumaticCraftApi (1.0) from PneumaticCraft-1.7.10-1.12.7-150-universal.jar
+		* pressureAPI (1.3.0.130) from pressure-1.3.0.130-mc1.7.10.jar
+		* RailcraftAPI|bore (1.0.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|carts (1.6.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* RailcraftAPI|core (1.5.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|crafting (1.0.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|electricity (2.0.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* RailcraftAPI|events (1.0.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|fuel (1.0.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|helpers (1.1.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* RailcraftAPI|items (1.0.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|locomotive (1.1.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|signals (2.3.0) from Traincraft-4.3.3_011.jar
+		* RailcraftAPI|tracks (2.3.0) from Traincraft-4.3.3_011.jar
+		* StorageDrawersAPI (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|config (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|event (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|inventory (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|pack (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|registry (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|render (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|storage (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* StorageDrawersAPI|storage-attribute (1.7.10-1.2.0) from StorageDrawers-1.7.10-1.10.9.jar
+		* Thaumcraft|API (4.2.2.0) from Railcraft_1.7.10-9.12.2.1.jar
+		* WailaAPI (1.2) from Waila-1.5.10_1.7.10.jar
+	EnderIO: Found the following problem(s) with your installation:
+                  * The RF API that is being used (1.7.10R1.3.1 from <unknown>) differes from that that is reported as being loaded (1.7.10R1.0.2 from ElectricalAge-1.14.2-Build-487-c2eeaa3.jar).
+                    It is a supported version, but that difference may lead to problems.
+                 This may have caused the error. Try reproducing the crash WITHOUT this/these mod(s) before reporting it.
+	Profiler Position: N/A (disabled)
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
